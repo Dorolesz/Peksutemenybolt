@@ -35,7 +35,7 @@ namespace Peksutemenybolt
 
 		public void CalculateTotalPrice()
 		{
-			;
+
 		}
 
 	}
