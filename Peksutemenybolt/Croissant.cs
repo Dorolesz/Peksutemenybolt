@@ -21,7 +21,7 @@ namespace Peksutemenybolt
 		}
 		public override void IncreasePrice(double amount)
 		{
-			price += amount;
+			price += 50;
 		}
 	}
 }
