@@ -14,5 +14,15 @@ namespace Peksutemenybolt
 		{
 			this.topping = topping;
 		}
+
+		public override string GetDescription()
+		{
+			return $"A termék neve: {name}\nFeltét: {topping}\nKalória: {calories} kcal\nÁra: {price} Ft\n";
+		}
+
+		public override void IncreasePrice(double amount)
+		{
+			price += amount;
+		}
 	}
 }

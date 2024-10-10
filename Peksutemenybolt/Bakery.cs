@@ -18,25 +18,30 @@ namespace Peksutemenybolt
 			products = new List<BakedGood>();
 		}
 
-		public void AddProducts(string product)
+		public void AddProducts(BakedGood product)
 		{
-			products.Add(BakedGood(product));
+			products.Add(product);
 		}
 
 		public void DisplayProducts()
 		{
-			Console.WriteLine(products);
+			foreach (var product in products)
+			{
+				Console.WriteLine(product.GetDescription());
+			}
 		}
 
 		public void CalculateTotalCalories()
 		{
-			Console.WriteLine(); 
+			int totalCalories = products.Sum(product => product.Calories);
+			Console.WriteLine($"Összes kalória: {totalCalories} kcal"); 
 		}
 
 		public void CalculateTotalPrice()
 		{
-
-		}
+			double totalPrice = products.Sum(product => product.Price);
+            Console.WriteLine($"Összes ár: {totalPrice} Ft");
+        }
 
 	}
 }

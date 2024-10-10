@@ -17,11 +17,11 @@ namespace Peksutemenybolt
 
 		public override string GetDescription()
 		{
-			return $"A termék neve: {name}\nVajtartalma: {butterContent}\nKalóriája: {calories}\nÁra: {price}";
+			return $"A termék neve: {name}\nVajtartalma: {butterContent} g\nKalóriája: {calories} kcal\nÁra: {price} Ft\n";
 		}
 		public override void IncreasePrice(double amount)
 		{
-			throw new NotImplementedException();
+			price += amount;
 		}
 	}
 }

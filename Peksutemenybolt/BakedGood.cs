@@ -8,9 +8,9 @@ namespace Peksutemenybolt
 {
 	abstract class BakedGood
 	{
-		private string name;
-		private double price;
-		private int calories;
+		protected string name;
+		protected double price;
+		protected int calories;
 
 		public BakedGood(string name, double price, int calories) 
 		{
@@ -18,6 +18,10 @@ namespace Peksutemenybolt
 			this.price = price;
 			this.calories = calories;
 		}
+
+		public string Name => name;
+		public double Price => price;
+		public int Calories => calories;
 
 		public abstract string GetDescription();
 		public abstract void IncreasePrice(double amount);
