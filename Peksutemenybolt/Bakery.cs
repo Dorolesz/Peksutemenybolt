@@ -9,8 +9,8 @@ namespace Peksutemenybolt
 {
 	internal class Bakery
 	{
-		private string name { get; set;  }
-		private List<BakedGood> products { get; set; }
+		private string name;
+		private List<BakedGood> products;
 
 		public Bakery(string name)
 		{
@@ -23,24 +23,30 @@ namespace Peksutemenybolt
 			products.Add(product);
 		}
 
+		public List<BakedGood> GetProducts() 
+		{
+			return products; 
+		}
+
 		public void DisplayProducts()
 		{
-			foreach (var product in products)
+            Console.WriteLine($"Pékség neve: {name}\nKínálat:");
+            foreach (var product in products)
 			{
 				Console.WriteLine(product.GetDescription());
 			}
 		}
 
-		public void CalculateTotalCalories()
+		public int CalculateTotalCalories()
 		{
-			int totalCalories = products.Sum(product => product.Calories);
-			Console.WriteLine($"Összes kalória: {totalCalories} kcal"); 
+			return products.Sum(product => product.Calories);
+			//Console.WriteLine($"Összes kalória: {totalCalories} kcal"); 
 		}
 
-		public void CalculateTotalPrice()
+		public decimal CalculateTotalPrice()
 		{
-			double totalPrice = products.Sum(product => product.Price);
-            Console.WriteLine($"Összes ár: {totalPrice} Ft");
+			return (decimal)products.Sum(product => (decimal)product.Price);
+            //Console.WriteLine($"Összes ár: {totalPrice} Ft");
         }
 
 	}
